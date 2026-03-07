@@ -1,0 +1,224 @@
+header#logo {
+  margin-top: 4.75rem;
+  margin-left: 7.5rem;
+  display: flex;
+
+  & img {
+    margin-right: 11px;
+  }
+
+}
+
+main {
+  margin-top: 5.5625rem;
+  margin-inline: auto;
+
+  width: 68.625rem;
+  height: 25.75rem;
+
+  display: flex;
+  gap: 6.75rem;
+
+  & #info {
+    width: 31.75rem;
+    height: 25.75rem;
+
+    & .overline {
+      font: var(--overline);
+      margin-bottom: .75rem;
+    }
+
+    & .display-lg {
+      font: var(--display-lg);
+      text-transform: uppercase;
+      color: var(--content-primary);
+
+      margin-bottom: 38px;
+
+      width: 31.75rem;
+      /* height: 14rem; */
+    }
+
+    & .question-wrapper {
+      display: flex;
+      width: 31.75rem;
+
+      & svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      & .question-controller {
+        display: block;
+        margin-left: .5rem;
+
+        width: 24.125rem;
+        height: 3.5625rem;
+
+        & .question {
+          font: var(--paragraph-md);
+        }
+
+        & .response {
+          font: var(--paragraph-sm);
+        }
+      }
+
+      & .question-controller:nth-child(2) {
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
+
+  & #sorter {
+    padding-block: 2.125rem;
+
+    & div {
+      & h3 {
+        font: var(--paragraph-lg);
+        text-transform: uppercase;
+        color: var(--content-primary);
+      }
+    }
+
+    & #config {
+      margin-top: 2.5rem;
+      border-image: var(--gradient-border) 1;
+
+      & .config-container {
+        display: flex;
+        gap: .75rem;
+
+        & label {
+          border: none;
+
+          & .identifier {
+            font: var(--label-sm);
+
+            margin-bottom: .5rem;
+            text-align: center;
+          }
+
+          & .teste {
+            width: 86px;
+            height: 56px;
+            background-image: none;
+            border-radius: .5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & .numbers {
+              width: 84px;
+              height: 54px;
+              background-color: var(--background-secondary);
+              border-radius: .5rem;
+  
+              font: var(--display-sm);
+              font-weight: 800;
+              color: var(--content-primary);
+              text-align: center;
+            }
+          }
+
+          & .teste:hover {
+            width: 86px;
+            height: 56px;
+            background-image: var(--gradient-border);
+          }
+
+          & .teste:has(input:focus) {
+            width: 86px;
+            height: 56px;
+            background-image: var(--gradient-border);
+
+            & .numbers {
+              width: 82px;
+              height: 52px;
+            }
+          }
+        }
+      }
+
+      & #checkbox-container {
+        margin-top: 1.3125rem;
+        gap: .5rem;
+        
+        display: flex;
+
+        & label {
+          display: flex;
+          width: 1.875rem;
+          height: 1.25rem;
+          background-color: var(--content-tertiary);
+          padding-block: .1875rem;
+          border-radius: 1rem;
+          
+          & .slider-circle {
+            background-color: aliceblue;
+            width: .875rem;
+            height: .875rem;
+            border-radius: 100%;
+            margin-inline: .1875rem .8125rem;
+          }
+
+          & input {
+            display: none;
+          }
+
+          input:checked + .slider-circle {
+            margin-inline: .8125rem .1875rem;
+          }
+        }
+
+        & label:has(input:checked) {
+          background-image: var(--gradient-background);
+        }
+      }
+
+      & .button {
+        display: flex;
+        width: 482px;
+        height: 3.5rem;
+
+        padding-block: 1rem;
+        margin-top: 2.5rem;
+
+        background-color: var(--background-tertiary);
+        border-radius: .5rem;
+
+        & div {
+          margin-inline: auto;
+          display: flex;
+          align-items: center;
+
+          color: var(--content-primary);
+          stroke: var(--content-primary);
+
+          & p {
+            font: var(--label-md);
+          }
+
+          & img {
+            margin-left: .5rem;
+
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+      }
+
+      & .button:hover {
+        border: 2px solid;
+        /* border-image: var(--gradient-border) 1; */
+        background-color: var(--background-secondary);
+      }
+
+      /* .button:hover {
+      background:
+        linear-gradient(#0d0d12, #0d0d12) padding-box,
+        linear-gradient(90deg,#77C0AF,#D1DC97,#E9A9B3,#D586E0,#91A1FA) border-box;
+    } */
+    }
+  }
+}
