@@ -31,7 +31,7 @@
   /* Gradient */
   --gradient-border: linear-gradient(270deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
   --gradient-background: linear-gradient(90deg, #D586E0 0%, #91A1FA 98.93%);
-  --gradient-content: linear-gradient(360deg, #C7C9CC 0%, #3D3D3D 100%);
+  --gradient-content: linear-gradient(#000000, #00000044);
 
   /* FONTES */
   /* Sora */
@@ -57,11 +57,18 @@
     color: var(--content-brand);
     stroke: var(--content-brand);
   }
+
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
+  min-height: 100vh;
   background-color: var(--background-primary);
-  background-image: url(../img/background.png);
+  background-image: var(--gradient-content), url(../img/background.png);
+
 
   font: var(--paragraph-md);
   color: var(--content-secondary);
