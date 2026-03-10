@@ -1,10 +1,10 @@
 header#logo {
-  margin-top: 4.75rem;
-  margin-left: 7.5rem;
+  width: 69rem;
+  margin-inline: auto;
   display: flex;
 
   & img {
-    margin-right: 11px;
+   margin-right: 11px;
   }
 
 }
@@ -13,14 +13,14 @@ main {
   margin-top: 5.5625rem;
   margin-inline: auto;
 
-  width: 68.625rem;
+  width: 69rem;
   height: 25.75rem;
 
   display: flex;
   gap: 6.75rem;
 
   & #info {
-    width: 31.75rem;
+    width: 32rem;
     height: 25.75rem;
 
     & .overline {
@@ -33,10 +33,7 @@ main {
       text-transform: uppercase;
       color: var(--content-primary);
 
-      margin-bottom: 38px;
-
-      width: 31.75rem;
-      /* height: 14rem; */
+      margin-bottom: 2.375rem;
     }
 
     & .question-wrapper {
@@ -71,7 +68,9 @@ main {
   }
 
   & #sorter {
-    padding-block: 2.125rem;
+    width: 30.12rem;
+    height: 18.375rem;
+    margin-block: 3.6875rem;
 
     & div {
       & h3 {
@@ -83,7 +82,6 @@ main {
 
     & #config {
       margin-top: 2.5rem;
-      border-image: var(--gradient-border) 1;
 
       & .config-container {
         display: flex;
@@ -99,18 +97,17 @@ main {
             text-align: center;
           }
 
-          & .teste {
-            width: 86px;
-            height: 56px;
-            background-image: none;
+          & .number-container {
+            width: 5.375rem;
+            height: 3.5rem;
             border-radius: .5rem;
             display: flex;
             justify-content: center;
             align-items: center;
 
             & .numbers {
-              width: 84px;
-              height: 54px;
+              width: 5.25rem;
+              height: 3.375rem;
               background-color: var(--background-secondary);
               border-radius: .5rem;
   
@@ -121,20 +118,25 @@ main {
             }
           }
 
-          & .teste:hover {
-            width: 86px;
-            height: 56px;
-            background-image: var(--gradient-border);
+          & .number-container:hover {
+            width: 5.375rem;
+            height: 3.5rem;
+            background: var(--gradient-border);
+            background-size: 300% 300%;
+            animation: gradientShift 2.5s linear infinite;
+            
           }
 
-          & .teste:has(input:focus) {
-            width: 86px;
-            height: 56px;
-            background-image: var(--gradient-border);
+          & .number-container:has(input:focus) {
+            width: 5.375rem;
+            height: 3.5rem;
+            background: var(--gradient-border);
+            background-size: 300% 300%;
+            animation: gradientShift 2.5s linear infinite;
 
             & .numbers {
-              width: 82px;
-              height: 52px;
+              width: 5.125rem;
+              height: 3.25rem;
             }
           }
         }
@@ -146,7 +148,7 @@ main {
         
         display: flex;
 
-        & label {
+        & .checkbox-wrapper {
           display: flex;
           width: 1.875rem;
           height: 1.25rem;
@@ -154,31 +156,38 @@ main {
           padding-block: .1875rem;
           border-radius: 1rem;
           
+          
           & .slider-circle {
-            background-color: aliceblue;
+            background-color: var(--content-primary);
             width: .875rem;
             height: .875rem;
             border-radius: 100%;
             margin-inline: .1875rem .8125rem;
           }
-
+          
           & input {
             display: none;
           }
-
-          input:checked + .slider-circle {
+          
+          & input:checked + .slider-circle {
             margin-inline: .8125rem .1875rem;
+            transition: ease .3s;
+          }
+          
+          & input + .slider-circle {
+            transition: ease .3s;
           }
         }
-
-        & label:has(input:checked) {
-          background-image: var(--gradient-background);
+        
+        & .checkbox-wrapper:has(input:checked) {
+          background: var(--gradient-background);
+          
         }
       }
-
-      & .button {
+      
+      & .button-container {
         display: flex;
-        width: 482px;
+        width: 30.12rem;
         height: 3.5rem;
 
         padding-block: 1rem;
@@ -187,7 +196,7 @@ main {
         background-color: var(--background-tertiary);
         border-radius: .5rem;
 
-        & div {
+        & .button {
           margin-inline: auto;
           display: flex;
           align-items: center;
@@ -208,17 +217,34 @@ main {
         }
       }
 
-      & .button:hover {
-        border: 2px solid;
-        /* border-image: var(--gradient-border) 1; */
+      & .button-container:hover {
         background-color: var(--background-secondary);
-      }
+        background: var(--gradient-border);
+        background-size: 300% 300%;
+        animation: gradientShift 2.5s linear infinite;
+        
+        justify-content: center;
+        align-items: center;
+        
+        & .button {
+          width: 29.875rem;
+          height: 3.25rem;
+          border-radius: .5rem;
+          background: var(--background-secondary);
 
-      /* .button:hover {
-      background:
-        linear-gradient(#0d0d12, #0d0d12) padding-box,
-        linear-gradient(90deg,#77C0AF,#D1DC97,#E9A9B3,#D586E0,#91A1FA) border-box;
-    } */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-inline: auto;
+
+          & img {
+          animation: moveRight 2.4s ease-in-out infinite;
+            /* transition: 5s linear; */
+            position: relative;
+            /* left: 5px; */
+          }
+        }
+      }
     }
   }
 }
