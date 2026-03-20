@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,34 +85,34 @@
         </p>
       </div>
 
-      <form id="config">
+      <div id="config">
         <div class="config-container">
           <label>
             <legend class="identifier">NÚMEROS</legend>
               <div class="number-container">
-                <input class="numbers" type="text" value="2">
+                <input id="numQuantity" class="numbers" type="number" value="2">
               </div>
           </label>
   
           <label>
             <legend class="identifier">DE</legend>
               <div class="number-container">
-                <input class="numbers" type="text" value="1">
+                <input id="numFrom" class="numbers" type="number" value="1">
               
               </div>
           </label>
   
           <label>
-            <legend class="identifier">DE</legend>
+            <legend class="identifier">A</legend>
               <div class="number-container">
-                <input class="numbers" type="text" value="100">
+                <input id="numTo" class="numbers" type="number" value="100">
               </div>
           </label>
         </div>
 
         <div id="checkbox-container">
           <label class="checkbox-wrapper">
-            <input type="checkbox">
+            <input id="noRepeat" type="checkbox">
             <div class="slider-circle"></div>
           </label>
 
@@ -121,15 +121,37 @@
         </div>
 
         <div class="button-container">
-          <div class="button">
+          <label class="button">
+            <button id="pick"></button>
             <p>SORTEAR</p>
             <img src="./img/arrow.svg" alt="">
-          </div>
+          </label>
         </div>
-      </form>
+      </div>
+    </section>
+
+    <section id="result-sec" class="hider">
+      <div id="resTitle">
+        <h3>Resultado do sorteio</h3>
+        <p>
+          1º resultado
+        </p>
+      </div>
+
+      <div>
+        <div id="results"></div>
+
+        <div class="button-container">
+          <label class="button">
+            <button id="pick"></button>
+            <p>SORTEAR</p>
+            <img src="./img/rerow.svg" alt="">
+          </label>
+        </div>
+      </div>
     </section>
   </main>
 
 </body>
-
+<script src="./script.js"></script>
 </html>

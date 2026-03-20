@@ -60,7 +60,8 @@
 
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -82,30 +83,47 @@ h1 {
   text-transform: uppercase;
 }
 
-input {
+input, button {
   border: none;
   outline: none;
   background: none;
-}
 
+  &[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+}
 
 @keyframes gradientShift {
   100% {
     filter: hue-rotate(360deg)
-  } 
+  }
 }
 
 @keyframes moveRight {
- 0% {
+  0% {
     left: 0px;
 
   }
 
   50% {
     left: 10px;
-  } 
+  }
 
   100% {
     left: 0px;
-  } 
+  }
+}
+
+@keyframes roll {
+  100% {
+    transform: rotate(360deg);
+  }
 }
