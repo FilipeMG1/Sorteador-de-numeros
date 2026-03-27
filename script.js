@@ -4,6 +4,7 @@ const numFrom = document.getElementById("numFrom")
 const numTo = document.getElementById("numTo")
 const noRepeat = document.getElementById("noRepeat")
 const pick = document.getElementById("pick")
+const reroll = document.getElementById("reroll")
 
 const allNumbers = [numQuantity, numFrom, numTo]
 
@@ -20,9 +21,9 @@ allNumbers.forEach((input) => {
 })
 
 pick.addEventListener("click", () => {
-  const nqv = Number(numQuantity.value)
-  const nfv = Number(numFrom.value)
-  const ntv = Number(numTo.value)
+  const nqv = Number(numQuantity.value) || Number(numQuantity.placeholder)
+  const nfv = Number(numFrom.value) || Number(numFrom.placeholder)
+  const ntv = Number(numTo.value) || Number(numTo.placeholder)
   const noRepeatChecked = noRepeat.checked
 
   const pickedNumbers = []
@@ -60,20 +61,20 @@ pick.addEventListener("click", () => {
 
   resultsDiv.innerHTML = ""
 
+  const baseDelay = 3000
+  const totalItems = pickedNumbers.length
+
   pickedNumbers.forEach((num, index) => {
-    const baseDelay = 3000
     const startTime = index * baseDelay
 
     setTimeout(() => {
       const span = document.createElement("span")
       span.classList.add("resHide", "lg-res")
-      // span.classList.add("resNum")
       span.textContent = num
-      
+
       resultsDiv.appendChild(span)
-      
+
       setTimeout(() => {
-        // span.classList.add("resNum")
         span.classList.remove("resHide")
         span.classList.add("resAppear")
       }, 500)
@@ -94,9 +95,32 @@ pick.addEventListener("click", () => {
     }, startTime)
   })
 
+  const totalDuration = (totalItems - 1) * baseDelay + 3200
+
+  setTimeout(() => {
+    const buttonRerrolAppear = document.getElementById("results-button")
+    buttonRerrolAppear.classList.add("button-show")
+  }, totalDuration)
+
+  setTimeout(() => {
+    const buttonRerrolAppear = document.getElementById("results-button")
+    buttonRerrolAppear.classList.remove("button-container-up")
+  }, totalDuration + 50)
+
   const hideSorter = document.getElementById("sorter")
   hideSorter.setAttribute("class", "hider")
 
   const removeHider = document.getElementById("result-sec")
   removeHider.removeAttribute("class", "hider")
+})
+
+reroll.addEventListener("click", () => {
+  const secSorter = document.getElementById("sorter")
+  const secResult = document.getElementById("result-sec")
+  const secButton = document.getElementById("results-button")
+
+  secSorter.classList.remove("hider")
+  secResult.classList.add("hider")
+  secButton.classList.add("button-container-up")
+  secButton.classList.remove("button-show")
 })

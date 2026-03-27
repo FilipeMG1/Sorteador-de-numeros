@@ -21,7 +21,6 @@ main {
 
   & .hider {
     display: none;
-    transition: all 5s ease-in;
   }
 
   & #info {
@@ -143,6 +142,23 @@ main {
               width: 5.125rem;
               height: 3.25rem;
             }
+
+            & .numbers::placeholder {
+              opacity: 0;
+            }
+          }
+        }
+
+        & label:hover {
+          & .identifier {
+            color: var(--content-brand);
+            transition: all ease .3s;
+          }
+        }
+
+        & label:has(input:focus) {
+          & .identifier {
+            color: var(--content-brand);
           }
         }
       }
@@ -285,6 +301,10 @@ main {
 
         margin-block: 2.5rem;
 
+        flex-wrap: wrap;
+        /* justify-content: center;
+        align-items: center; */
+
         & span {
           opacity: 0;
           color: transparent;
@@ -360,6 +380,9 @@ main {
         }
       }
 
+      & .button-container-up {
+        transform: translateY(100px);
+      }
 
       & .button-container {
         display: flex;
@@ -373,6 +396,13 @@ main {
 
         background-color: var(--background-tertiary);
         border-radius: .5rem;
+        opacity: 0;
+
+        transition: ease .2s;
+        
+        &.button-show {
+          opacity: 1
+        }
 
         & .button {
           margin-inline: auto;

@@ -90,14 +90,14 @@
           <label>
             <legend class="identifier">NÚMEROS</legend>
               <div class="number-container">
-                <input id="numQuantity" class="numbers" type="number" value="1">
+                <input id="numQuantity" class="numbers" type="number" placeholder="1">
               </div>
           </label>
   
           <label>
             <legend class="identifier">DE</legend>
               <div class="number-container">
-                <input id="numFrom" class="numbers" type="number" value="1">
+                <input id="numFrom" class="numbers" type="number" placeholder="1">
               
               </div>
           </label>
@@ -105,7 +105,7 @@
           <label>
             <legend class="identifier">A</legend>
               <div class="number-container">
-                <input id="numTo" class="numbers" type="number" value="100">
+                <input id="numTo" class="numbers" type="number" placeholder="100">
               </div>
           </label>
         </div>
@@ -120,7 +120,7 @@
 
         </div>
 
-        <div class="button-container">
+        <div id="button-reroll" class="button-container">
           <label class="button">
             <button id="pick"></button>
             <p>SORTEAR</p>
@@ -141,9 +141,9 @@
       <div>
         <div id="results"></div>
 
-        <div class="button-container">
+        <div id="results-button" class="button-container  button-container-up">
           <label class="button">
-            <button id="pick"></button>
+            <button id="reroll"></button>
             <p>SORTEAR</p>
             <img src="./img/rerow.svg" alt="">
           </label>
