@@ -105,6 +105,9 @@ pick.addEventListener("click", () => {
   setTimeout(() => {
     const buttonRerrolAppear = document.getElementById("results-button")
     buttonRerrolAppear.classList.remove("button-container-up")
+
+    const unlockScroll = document.getElementById("results")
+    unlockScroll.classList.add("unlock-scroll")
   }, totalDuration + 50)
 
   const hideSorter = document.getElementById("sorter")
@@ -116,11 +119,15 @@ pick.addEventListener("click", () => {
 
 reroll.addEventListener("click", () => {
   const secSorter = document.getElementById("sorter")
-  const secResult = document.getElementById("result-sec")
-  const secButton = document.getElementById("results-button")
-
   secSorter.classList.remove("hider")
+
+  const secResult = document.getElementById("result-sec")
   secResult.classList.add("hider")
+
+  const secButton = document.getElementById("results-button")
   secButton.classList.add("button-container-up")
   secButton.classList.remove("button-show")
+
+  const unlockScroll = document.getElementById("results")
+  unlockScroll.classList.remove("unlock-scroll")
 })

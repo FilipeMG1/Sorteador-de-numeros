@@ -1,0 +1,26 @@
+@keyframes gradientShift {
+  100% {
+    filter: hue-rotate(360deg)
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    left: 0px;
+
+  }
+
+  50% {
+    left: .625rem;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes roll {
+  100% {
+    transform: rotate(180deg);
+  }
+}
